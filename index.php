@@ -6,7 +6,7 @@
 		<?php comments_template(); ?>
 	<?php endwhile; endif; ?>
 
-	<?php zeroblank_pagenavi(); ?>
+	<?php get_template_part('pagination'); ?>
 </section>
 
 <?php get_sidebar(); ?>
