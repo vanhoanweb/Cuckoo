@@ -3,10 +3,10 @@
 <section id="content" role="main">
 	<header class="header">
 		<h1 class="entry-title"><?php 
-		if ( is_day() ) { printf( __( 'Daily Archives: %s', 'zeroblank' ), get_the_time( get_option( 'date_format' ) ) ); }
-		elseif ( is_month() ) { printf( __( 'Monthly Archives: %s', 'zeroblank' ), get_the_time( 'F Y' ) ); }
-		elseif ( is_year() ) { printf( __( 'Yearly Archives: %s', 'zeroblank' ), get_the_time( 'Y' ) ); }
-		else { _e( 'Archives', 'zeroblank' ); }
+		if ( is_day() ) { printf( __( 'Daily Archives: %s', 'zb' ), get_the_time( get_option( 'date_format' ) ) ); }
+		elseif ( is_month() ) { printf( __( 'Monthly Archives: %s', 'zb' ), get_the_time( 'F Y' ) ); }
+		elseif ( is_year() ) { printf( __( 'Yearly Archives: %s', 'zb' ), get_the_time( 'Y' ) ); }
+		else { _e( 'Archives', 'zb' ); }
 		?></h1>
 	</header>
 
@@ -14,7 +14,7 @@
 		<?php get_template_part( 'entry' ); ?>
 	<?php endwhile; endif; ?>
 
-	<?php zeroblank_pagenavi(); ?>
+	<?php get_template_part('pagination'); ?>
 </section>
 
 <?php get_sidebar(); ?>
