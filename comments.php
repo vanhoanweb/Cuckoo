@@ -28,8 +28,8 @@
 			$ping_count = count( $comments_by_type['pings'] ); ?>
 
 			<section id="trackbacks-list" class="comments">
-				<h3 class="comments-title"><?php echo '<span class="ping-count">' . $ping_count . '</span> ' . ( $ping_count > 1 ? __( 'Trackbacks', 'zeroblank' ) : __( 'Trackback', 'zeroblank' ) ); ?></h3>
-				<ul><?php wp_list_comments( 'type=pings&callback=zeroblank_custom_pings' ); ?></ul>
+				<h3 class="comments-title"><?php echo '<span class="ping-count">' . $ping_count . '</span> ' . ( $ping_count > 1 ? __( 'Trackbacks', 'zb' ) : __( 'Trackback', 'zb' ) ); ?></h3>
+				<ul><?php wp_list_comments( 'type=pings&callback=zb_custom_pings' ); ?></ul>
 			</section>
 		<?php endif; 
 	endif;
