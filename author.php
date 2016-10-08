@@ -3,7 +3,7 @@
 <section id="content" role="main">
 	<header class="header">
 		<?php the_post(); ?>
-		<h1 class="entry-title author"><?php _e( 'Author Archives', 'zeroblank' ); ?>: <?php the_author_link(); ?></h1>
+		<h1 class="entry-title author"><?php _e( 'Author Archives', 'zb' ); ?>: <?php the_author_link(); ?></h1>
 		<?php if ( '' != get_the_author_meta( 'user_description' ) ) echo apply_filters( 'archive_meta', '<div class="archive-meta">' . get_the_author_meta( 'user_description' ) . '</div>' ); ?>
 		<?php rewind_posts(); ?>
 	</header>
@@ -12,7 +12,7 @@
 		<?php get_template_part( 'entry' ); ?>
 	<?php endwhile; ?>
 
-	<?php zeroblank_pagenavi(); ?>
+	<?php get_template_part('pagination'); ?>
 </section>
 
 <?php get_sidebar(); ?>
