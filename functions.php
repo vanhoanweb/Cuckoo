@@ -59,8 +59,8 @@ function zb_widgets_init() {
 	register_sidebar( array (
 		'name' => __( 'Sidebar Widget Area', 'zb' ),
 		'id' => 'primary-widget-area',
-		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
-		'after_widget' => "</li>",
+		'before_widget' => '<section id="%1$s" class="widget-container %2$s">',
+		'after_widget' => "</section>",
 		'before_title' => '<h4 class="widget-title">',
 		'after_title' => '</h4>',
 	) );
@@ -107,5 +107,5 @@ function zb_pagenavi() {
 add_filter( 'excerpt_more', 'zb_excerpt_more' );
 function zb_excerpt_more( $more ) {
 	global $post;
-	return '... <a class="read-more" href="' . get_permalink($post->ID) . '">' . __( 'Read more', 'zb' ) . '</a>';
+	return '... <a class="read-more" href="' . get_permalink($post->ID) . '">' . __( 'Read more &raquo;', 'zb' ) . '</a>';
 }
