@@ -1,4 +1,3 @@
-		<div class="clear"></div>
 		</div><!-- #container -->
 
 		<footer id="footer" role="contentinfo">
