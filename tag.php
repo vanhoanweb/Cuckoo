@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="content" role="main">
+<main id="content" role="main">
 	<header class="header">
 		<h1 class="entry-title"><?php _e( 'Tag Archives: ', 'zb' ); ?><?php single_tag_title(); ?></h1>
 	</header>
@@ -10,7 +10,7 @@
 	<?php endwhile; endif; ?>
 
 	<?php get_template_part('pagination'); ?>
-</section>
+</main>
 
 <?php get_sidebar(); ?>
 
