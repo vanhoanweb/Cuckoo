@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="content" role="main">
+<main id="content" role="main">
 	<header class="header">
 		<h1 class="entry-title"><?php 
 		if ( is_day() ) { printf( __( 'Daily Archives: %s', 'zb' ), get_the_time( get_option( 'date_format' ) ) ); }
@@ -15,7 +15,7 @@
 	<?php endwhile; endif; ?>
 
 	<?php get_template_part('pagination'); ?>
-</section>
+</main>
 
 <?php get_sidebar(); ?>
 
