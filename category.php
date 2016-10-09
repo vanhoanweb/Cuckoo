@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="content" role="main">
+<main id="content" role="main">
 	<header class="header">
 		<h1 class="entry-title"><?php _e( 'Category Archives: ', 'zb' ); ?><?php single_cat_title(); ?></h1>
 		<?php if ( '' != category_description() ) echo apply_filters( 'archive_meta', '<div class="archive-meta">' . category_description() . '</div>' ); ?>
@@ -11,7 +11,7 @@
 	<?php endwhile; endif; ?>
 
 	<?php get_template_part('pagination'); ?>
-</section>
+</main>
 
 <?php get_sidebar(); ?>
 
