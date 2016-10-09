@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="content" role="main">
+<main id="content" role="main">
 	<header class="header">
 		<?php the_post(); ?>
 		<h1 class="entry-title author"><?php _e( 'Author Archives', 'zb' ); ?>: <?php the_author_link(); ?></h1>
@@ -13,7 +13,7 @@
 	<?php endwhile; ?>
 
 	<?php get_template_part('pagination'); ?>
-</section>
+</main>
 
 <?php get_sidebar(); ?>
 
