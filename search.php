@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section id="content" role="main">
+<main id="content" role="main">
 	<?php if ( have_posts() ) : ?>
 		<header class="header">
 			<h1 class="entry-title"><?php printf( __( 'Search Results for: %s', 'zb' ), get_search_query() ); ?></h1>
@@ -23,7 +23,7 @@
 			</section>
 		</article>
 	<?php endif; ?>
-</section>
+</main>
 
 <?php get_sidebar(); ?>
 
