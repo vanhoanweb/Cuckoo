@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main id="content" role="main">
-	<header class="header">
+	<header class="entry-header">
 		<h1 class="entry-title"><?php _e( 'Category Archives: ', 'zb' ); ?><?php single_cat_title(); ?></h1>
 		<?php if ( '' != category_description() ) echo apply_filters( 'archive_meta', '<div class="archive-meta">' . category_description() . '</div>' ); ?>
 	</header>
