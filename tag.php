@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main id="content" role="main">
-	<header class="header">
+	<header class="entry-header">
 		<h1 class="entry-title"><?php _e( 'Tag Archives: ', 'zb' ); ?><?php single_tag_title(); ?></h1>
 	</header>
 
