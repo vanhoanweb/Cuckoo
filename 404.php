@@ -2,7 +2,7 @@
 
 <main id="content" role="main">
 	<article id="post-0" class="post not-found">
-		<header class="header">
+		<header class="entry-header">
 			<h1 class="entry-title"><?php _e( 'Not Found', 'zb' ); ?></h1>
 		</header>
 
