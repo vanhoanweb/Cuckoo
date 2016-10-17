@@ -107,5 +107,5 @@ function zb_pagenavi() {
 add_filter( 'excerpt_more', 'zb_excerpt_more' );
 function zb_excerpt_more( $more ) {
 	global $post;
-	return '... <a class="read-more" href="' . get_permalink($post->ID) . '">' . __( 'Read more &raquo;', 'zb' ) . '</a>';
+	return '... <a class="more-link" href="' . get_permalink($post->ID) . '">' . __( '[Continue reading]', 'zb' ) . '</a>';
 }
