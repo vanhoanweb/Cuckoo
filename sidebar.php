@@ -1,4 +1,4 @@
-<aside class="sidebar sidebar-primary widget-area">
+<aside class="sidebar sidebar-primary widget-area" role="complementary" aria-label="Primary Sidebar" itemscope="" itemtype="http://schema.org/WPSideBar">
 	
 	<?php if (is_active_sidebar('widgets_sidebar')) :
 		
