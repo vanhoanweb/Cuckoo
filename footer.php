@@ -15,7 +15,7 @@
 			</div>
 		</div>
 
-		<footer class="site-footer">
+		<footer class="site-footer" itemscope="" itemtype="http://schema.org/WPFooter">
 			<div class="wrap">
 				<p>&copy; <?php echo date('Y') .' '. get_bloginfo('name'); ?>
 				&bull; <a href="<?php bloginfo('rss2_url'); ?>"><?php _e('Entries (RSS)', 'zero-blank'); ?></a>
