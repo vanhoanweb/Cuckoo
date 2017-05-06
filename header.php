@@ -1,6 +1,6 @@
 <!DOCTYPE html> 
 <html <?php language_attributes(); ?>>
-<head>	
+<head <?php if (is_front_page() || is_home()) echo 'itemscope="" itemtype="http://schema.org/WebSite"'; ?>>	
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,14 +15,14 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->	
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> itemscope="" itemtype="http://schema.org/WebPage">
 	
 	<div class="site-container">
 		
-		<header class="site-header">
+		<header class="site-header" itemscope="" itemtype="http://schema.org/WPHeader">
 			<div class="wrap">
 				<div class="title-area">
-					<?php if (is_front_page() || is_home() || is_front_page() && is_home()) : ?>
+					<?php if (is_front_page() || is_home()) : ?>
 						<h1 class="site-title"><a href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a></h1>
 					<?php else: ?>
 						<p class="site-title"><a href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a></p>
@@ -33,13 +33,14 @@
 			</div>			
 		</header>
 
-		<nav class="nav-primary">
+		<nav class="nav-primary" itemscope="" itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
 			<div class="wrap">
-				<?php if(has_nav_menu('menu-primary')) :
-					wp_nav_menu(array('theme_location' => 'menu-primary'));
-				else: ?>
-					<ul class="menu menu-primary"><?php wp_list_pages('title_li='); ?></ul>
-				<?php endif; ?>				
+				<?php if (has_nav_menu('primary-navigation')) :
+				wp_nav_menu(array(
+					'menu_class'	=>	'menu zb-nav-menu',
+					'container'		=>	'',
+					'theme_location'=>	'primary-navigation'
+				)); endif; ?>
 			</div>
 		</nav>
 
