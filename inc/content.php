@@ -1,35 +1,34 @@
 <?php while (have_posts()) : the_post(); ?>
 	
-	<article <?php post_class('entry'); ?>>
+	<article <?php post_class('entry'); ?> itemscope="" itemtype="http://schema.org/CreativeWork">
 
-		<?php if (has_post_thumbnail()) {
-			echo '<a href="'.get_the_permalink().'" class="alignnone">';
-			the_post_thumbnail('large', array('class' => 'entry-image'));
-			echo '</a>';
-		} ?>
+		<?php if (has_post_thumbnail()) : ?>
+		<a class="featured-image" href="<?php the_permalink(); ?>">
+			<?php the_post_thumbnail('large', array('class' => 'entry-image')); ?>
+		</a><?php endif; ?>
 
 		<header class="entry-header">
 			<?php if (is_singular()): ?>
-				<h1 class="entry-title"><?php the_title(); ?></h1>
+				<h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
 			<?php else : ?>
-				<h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+				<h2 class="entry-title" itemprop="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			<?php endif; ?>
 
 			<p class="entry-meta">
-				<span class="posted-on">
-					<em><?php _e('Posted on ', 'zero-blank'); ?></em><time class="entry-time" datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('F jS, Y'); ?></time>
+				<span class="entry-time">
+					<em><?php _e('Posted on ', 'zero-blank'); ?></em><time itemprop="datePublished" datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('F jS, Y'); ?></time>
 				</span>
-				<span class="byline">
+				<span class="entry-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 					<em><?php _e('Written by ', 'zero-blank'); ?></em><?php the_author_posts_link(); ?>
 				</span>
 				<?php if (comments_open(get_the_ID())): ?>
-					<span class="entry-comments-link"><?php comments_popup_link('Leave a comment', '1 comment', '% comments', 'comments-link', 'Comments disabled'); ?></span>
+					<span class="entry-comments"><?php comments_popup_link('Leave a comment', '1 comment', '% comments', '', 'Comments disabled'); ?></span>
 				<?php endif; ?>
-				<?php edit_post_link('Edit this &raquo;', '<span class="edit-link">', '</span>'); ?>
+				<?php edit_post_link('Edit this &raquo;', '<span class="entry-edit">', '</span>'); ?>
 			</p>
 		</header>
 
-		<div class="entry-content">
+		<div class="entry-content" itemprop="text">
 			<?php if (is_singular()): ?>
 				<?php the_content(); ?>
 			<?php else : ?>
