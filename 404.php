@@ -20,18 +20,16 @@
 
 				<h4><?php _e('Authors:', 'zero-blank'); ?></h4>
 				<ul>
-					<?php wp_list_authors(
-						array(
-							'show_fullname'	=> 1,
-							'optioncount'	=> 1,
-							'orderby'		=> 'post_count',
-							'order'			=> 'DESC',
-							'number'		=> 10,
-							'hide_empty'	=> 0,
-							'echo'			=> 1,
-							'exclude_admin'	=> 0
-						)
-					); ?>
+					<?php wp_list_authors(array(
+						'show_fullname'	=> 1,
+						'optioncount'	=> 1,
+						'orderby'		=> 'post_count',
+						'order'			=> 'DESC',
+						'number'		=> 10,
+						'hide_empty'	=> 0,
+						'echo'			=> 1,
+						'exclude_admin'	=> 0
+					)); ?>
 				</ul>
 
 				<h4><?php _e('Monthly:', 'zero-blank'); ?></h4>
