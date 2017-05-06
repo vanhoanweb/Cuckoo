@@ -17,12 +17,10 @@ function zb_setup() {
 	add_theme_support('title-tag');
 
 	// register menu
-	register_nav_menus(
-		array(
-			'menu-primary'	=>	__('Main Menu', 'zero-blank'),
-			'menu-secondary'=>	__('Extra Menu', 'zero-blank')
-		)
-	);
+	register_nav_menus(array(
+		'primary-navigation'	=>	__('Primary Navigation', 'zero-blank'),
+		'secondary-navigation'	=>	__('Secondary Navigation', 'zero-blank')
+	));
 	
 }
 add_action('after_setup_theme', 'zb_setup');
