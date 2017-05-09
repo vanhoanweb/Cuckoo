@@ -70,8 +70,7 @@ add_action('widgets_init', 'zb_widgets_init');
 function zb_pagination() {
 	global $wp_query;
 	$bignum = 999999999;
-	if ( $wp_query->max_num_pages <= 1 )
-		return;
+	if ( $wp_query->max_num_pages <= 1 ) return;
 	echo '<div class="archive-pagination pagination">';
 	echo paginate_links( array(
 		'base'			=>	str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
@@ -92,4 +91,15 @@ add_filter('excerpt_more', 'zb_excerpt_more');
 function zb_excerpt_more($more) {
 	global $post;
 	return '... <a class="more-link" href="' . get_permalink($post->ID) . '">' . __( '[Continue reading]', 'zero-blank' ) . '</a>';
+}
+
+// Add body_class tag
+add_filter('body_class', 'zb_body_class');
+function zb_body_class( $classes ) {
+	if (is_page_template('page-landing.php')) {
+		$classes[] = 'full-width-content zb-landing';
+	} else {
+		$classes[] = 'content-sidebar';
+	}
+	return $classes;
 }
