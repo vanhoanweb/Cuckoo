@@ -15,10 +15,11 @@
 		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->	
 </head>
-<body <?php body_class(); ?> itemscope="" itemtype="http://schema.org/WebPage">
+<body <?php body_class(); ?> itemscope="" itemtype="<?php if (is_search()) echo 'http://schema.org/SearchResultsPage'; else echo 'http://schema.org/WebPage'; ?>">
 	
 	<div class="site-container">
 		
+		<?php if (!is_page_template('page-landing.php')) : ?>
 		<header class="site-header" itemscope="" itemtype="http://schema.org/WPHeader">
 			<div class="wrap">
 				<div class="title-area">
@@ -43,6 +44,7 @@
 				)); endif; ?>
 			</div>
 		</nav>
+		<?php endif; ?>
 
 		<div class="site-inner">
 			<div class="content-sidebar-wrap">
