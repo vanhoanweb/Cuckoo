@@ -31,7 +31,7 @@
 
 					<p class="site-description"><?php bloginfo('description'); ?></p>
 				</div>
-			</div>			
+			</div>
 		</header>
 
 		<nav class="nav-primary" itemscope="" itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
