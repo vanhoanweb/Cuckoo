@@ -17,13 +17,7 @@ function zb_setup() {
 	add_theme_support('custom-header');
 	add_theme_support('custom-logo');
 	add_theme_support('custom-background');
-	add_theme_support('html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	));
+	add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
 	
 	// menu
 	add_theme_support('menus');
