@@ -1,8 +1,8 @@
-<?php if (is_singular()) : ?>
+<?php if (is_singular('post')) : ?>
 
-	<div class="adjacent-entry-pagination pagination">	
-		<?php previous_post_link('<div class="pagination-previous alignleft">%link</div>', '&larr; %title'); ?>	
-		<?php next_post_link('<div class="pagination-next alignright">%link</div>', '%title &rarr;'); ?>	
+	<div class="adjacent-entry-pagination pagination">
+		<?php previous_post_link('<div class="pagination-previous alignleft">%link</div>', '&larr; %title'); ?>
+		<?php next_post_link('<div class="pagination-next alignright">%link</div>', '%title &rarr;'); ?>
 	</div>
 
 	<section class="author-box" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -18,6 +18,8 @@
 			<p><?php the_author_meta('description'); ?></p>
 		</div>
 	</section>
+
+	<?php comments_template(); ?>
 
 <?php elseif (get_next_posts_link() || get_previous_posts_link()) :
 
