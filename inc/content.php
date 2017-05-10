@@ -14,7 +14,7 @@
 				<h2 class="entry-title" itemprop="headline"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
 			<?php endif; ?>
 
-			<?php if (get_post()->post_type == 'post'): ?>
+			<?php if (get_post_type() == 'post'): ?>
 			<p class="entry-meta">
 				<span class="entry-time">
 					<em><?php _e('Posted on ', 'zero-blank'); ?></em><time itemprop="datePublished" datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('F jS, Y'); ?></time>
@@ -38,7 +38,7 @@
 			<?php endif; ?>
 		</div>
 
-		<?php if (get_post()->post_type == 'post'): ?>
+		<?php if (get_post_type() == 'post'): ?>
 		<footer class="entry-footer">
 			<p class="entry-meta">
 				<span class="entry-categories"><?php _e('Filed Under: ', 'zero-blank'); ?><?php the_category(', '); ?></span>
