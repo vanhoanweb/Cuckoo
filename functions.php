@@ -1,4 +1,9 @@
 <?php
+/**
+ * Author: Van Hoan | @vanhoanweb
+ * URL: vanhoan.com
+ * Custom functions, support, custom post types and more.
+ */
 
 if (!defined('ABSPATH')) exit;
 
@@ -89,7 +94,7 @@ function zb_excerpt_more($more) {
 
 // Add body_class tag
 add_filter('body_class', 'zb_body_class');
-function zb_body_class( $classes ) {
+function zb_body_class($classes) {
 	if (is_page_template('page-landing.php')) {
 		$classes[] = 'full-width-content zb-landing';
 	} else {
@@ -98,6 +103,5 @@ function zb_body_class( $classes ) {
 	return $classes;
 }
 
-// Include
-// require get_template_directory() . '/inc/template-tags.php';
-// require get_template_directory() . '/inc/post-type.php';
+// Include files
+require get_template_directory() .'/inc/post-type.php';
