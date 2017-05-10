@@ -52,5 +52,3 @@
 <?php endwhile; ?>
 
 <?php get_template_part('inc/pagination'); ?>
-
-<?php if (is_singular()) comments_template(); ?>
