@@ -97,3 +97,7 @@ function zb_body_class( $classes ) {
 	}
 	return $classes;
 }
+
+// Include
+// require get_template_directory() . '/inc/template-tags.php';
+// require get_template_directory() . '/inc/post-type.php';
