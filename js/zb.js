@@ -21,11 +21,20 @@
 	});
 
 	/* Page scrolling feature - requires jQuery Easing plugin */
-	/*$('nav a').bind('click', function(event) {
+	$('.scroll-top').bind('click', function(event) {
 		var $anchor = $(this);
 		$('html, body').stop().animate({
 			scrollTop: $($anchor.attr('href')).offset().top - 100
 		}, 1500, 'easeInOutExpo');
 		event.preventDefault();
-	});*/
+	});
+
+	/* Menu bar fixed on top when scrolled */
+	$(window).bind('scroll', function(event) {
+		if ($(window).scrollTop() > 100) {
+			$('.scroll-top').addClass('fixed');
+		} else {
+			$('.scroll-top').removeClass('fixed');
+		}
+	});
 }(jQuery));
