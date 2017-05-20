@@ -19,8 +19,8 @@
 	
 	<div class="site-container">
 		
-		<?php if (!is_page_template('page-landing.php')) : ?>
-		<header class="site-header" itemscope="" itemtype="http://schema.org/WPHeader">
+		<?php //if (!is_page_template('page-landing.php')) : ?>
+		<header id="top" class="site-header" itemscope="" itemtype="http://schema.org/WPHeader">
 			<div class="wrap">
 				<div class="title-area">
 					<?php if (is_front_page() || is_home()) : ?>
@@ -44,7 +44,7 @@
 				)); endif; ?>
 			</div>
 		</nav>
-		<?php endif; ?>
+		<?php //endif; ?>
 
 		<div class="site-inner">
 			<div class="content-sidebar-wrap">
