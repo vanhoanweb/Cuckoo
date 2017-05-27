@@ -104,3 +104,5 @@ add_filter('body_class', 'zb_body_class');
 // Include files
 require_once get_template_directory() .'/inc/zb-post-type.php';
 require_once get_template_directory() .'/inc/zb-sidebar.php';
+require_once get_template_directory() .'/inc/zb-metabox.php';
+require_once get_template_directory() .'/inc/zb-options.php';
