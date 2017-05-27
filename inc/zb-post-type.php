@@ -31,7 +31,7 @@ function zb_post_type() {
 		'filter_items_list'		=> __( 'Filter items list', 'zero-blank' )
 	);
 	$rewrite = array(
-		'slug'					=> 'zb_post',
+		'slug'					=> 'zb-post',
 		'with_front'			=> true,
 		'pages'					=> true,
 		'feeds'					=> true
@@ -57,7 +57,7 @@ function zb_post_type() {
 		'rewrite'				=> $rewrite,
 		'capability_type'		=> 'post'
 	);
-	register_post_type( 'zb_post', $args );
+	register_post_type( 'zb-post', $args );
 }
 add_action('init', 'zb_post_type', 0);
 
@@ -86,7 +86,7 @@ function zb_taxonomy() {
 		'items_list_navigation'			=> __( 'Items list navigation', 'zero-blank' )
 	);
 	$rewrite = array(
-		'slug'							=> 'zb_category',
+		'slug'							=> 'zb-category',
 		'with_front'					=> true,
 		'hierarchical'					=> true
 	);
@@ -101,7 +101,7 @@ function zb_taxonomy() {
 		'query_var'						=> true,
 		'rewrite'						=> $rewrite
 	);
-	register_taxonomy( 'zb_category', array( 'zb_post' ), $args );
+	register_taxonomy( 'zb-category', array( 'zb-post' ), $args );
 
 	// Add new taxonomy, NOT hierarchical (like tags)
 	$labels = array(
@@ -127,7 +127,7 @@ function zb_taxonomy() {
 		'items_list_navigation'			=> __( 'Items list navigation', 'zero-blank' )
 	);
 	$rewrite = array(
-		'slug'							=> 'zb_tag',
+		'slug'							=> 'zb-tag',
 		'with_front'					=> true,
 		'hierarchical'					=> true
 	);
@@ -142,6 +142,6 @@ function zb_taxonomy() {
 		'query_var'						=> true,
 		'rewrite'						=> $rewrite
 	);
-	register_taxonomy( 'zb_tag', array( 'zb_post' ), $args );
+	register_taxonomy( 'zb-tag', array( 'zb-post' ), $args );
 }
 add_action( 'init', 'zb_taxonomy', 0 );
