@@ -52,22 +52,6 @@ function zb_scripts_and_styles() {
 }
 add_action('wp_enqueue_scripts', 'zb_scripts_and_styles');
 
-// register widgets
-function zb_widgets_init() {
-	$widget_args_1 = array(
-		'name'			=>	__('Widgets Sidebar', 'zero-blank'),
-		'id'			=>	'widgets_sidebar',
-		'class'			=>	'',
-		'description'	=>	__('Widgets added here are displayed in the sidebar', 'zero-blank'),
-		'before_widget'	=>	'<section class="widget %s">',
-		'after_widget'	=>	'</section>',
-		'before_title'	=>	'<h4 class="widget-title widgettitle">',
-		'after_title'	=>	'</h4>'
-	);	
-	register_sidebar($widget_args_1);
-}
-add_action('widgets_init', 'zb_widgets_init');
-
 // Pagination for paged posts, Page 1, Page 2, Page 3, with Next and Previous Links, No plugin
 function zb_pagination() {
 	global $wp_query;
@@ -88,15 +72,25 @@ function zb_pagination() {
 	echo '</div>';
 }
 
+// Custom the_excerpt or the_content
+function zb_excerpt( $limit ) {
+	return wp_trim_words( wp_strip_all_tags( get_the_excerpt() ), $limit, '...' );
+}
+
+// By default, excerpt length is set to 55 words. To change excerpt length to 30 words
+function zb_excerpt_length( $length ) {
+	return (is_front_page() || is_home()) ? 15 : 30;
+}
+add_filter('excerpt_length', 'zb_excerpt_length', 999);
+
 // Add 'Continue reading' button instead of [...] for Excerpts
-add_filter('excerpt_more', 'zb_excerpt_more');
 function zb_excerpt_more($more) {
 	global $post;
 	return '... <a class="more-link" href="' . get_permalink($post->ID) . '">' . __( '[Continue reading]', 'zero-blank' ) . '</a>';
 }
+add_filter('excerpt_more', 'zb_excerpt_more');
 
 // Add body_class tag
-add_filter('body_class', 'zb_body_class');
 function zb_body_class($classes) {
 	if (is_page_template('page-landing.php')) {
 		$classes[] = 'full-width-content zb-landing';
@@ -105,6 +99,8 @@ function zb_body_class($classes) {
 	}
 	return $classes;
 }
+add_filter('body_class', 'zb_body_class');
 
 // Include files
-require get_template_directory() .'/inc/post-type.php';
+require_once get_template_directory() .'/inc/zb-post-type.php';
+require_once get_template_directory() .'/inc/zb-sidebar.php';
