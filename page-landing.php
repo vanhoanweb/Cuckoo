@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 	
-<main class="content">
+<main class="content-main">
 
 	<?php if (have_posts()) : ?>
 	
