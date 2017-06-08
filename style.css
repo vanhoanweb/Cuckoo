@@ -95,7 +95,7 @@ a, button, input:focus, input[type="button"], input[type="reset"], input[type="s
 }
 ::-moz-selection { background-color: #222; color: #fff; }
 ::selection { background-color: #222; color: #fff; }
-.entry-comments::before, .entry-edit::before {
+.entry-comments-link::before, .entry-edit::before {
 	content: "\2014";
 	margin: 0 6px 0 2px;
 }
