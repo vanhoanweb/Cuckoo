@@ -23,7 +23,7 @@
 					<em><?php _e('Written by ', 'zero-blank'); ?></em><?php the_author_posts_link(); ?>
 				</span>
 				<?php if (comments_open(get_the_ID())): ?>
-					<span class="entry-comments"><?php comments_popup_link('Leave a comment', '1 comment', '% comments', '', 'Comments disabled'); ?></span>
+					<span class="entry-comments-link"><?php comments_popup_link('Leave a comment', '1 comment', '% comments', '', 'Comments disabled'); ?></span>
 				<?php endif; ?>
 				<?php edit_post_link('Edit this &raquo;', '<span class="entry-edit">', '</span>'); ?>
 			</p>
