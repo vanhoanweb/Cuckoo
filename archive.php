@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	
-	<main class="content">
+<main class="content-main">
 
 	<?php if (have_posts()) : ?>
 		
@@ -56,7 +56,7 @@
 		
 	<?php endif; ?>
 
-	</main>
+</main>
 	
 <?php get_sidebar(); ?>
 
