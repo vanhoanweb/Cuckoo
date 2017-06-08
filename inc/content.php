@@ -3,7 +3,7 @@
 	<article <?php post_class('entry'); ?> itemscope="" itemtype="http://schema.org/CreativeWork">
 
 		<?php if (has_post_thumbnail()) : ?>
-		<a class="featured-image" href="<?php the_permalink(); ?>">
+		<a class="entry-image-link" href="<?php the_permalink(); ?>">
 			<?php the_post_thumbnail('large', array('class' => 'entry-image')); ?>
 		</a><?php endif; ?>
 
