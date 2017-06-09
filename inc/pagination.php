@@ -1,10 +1,5 @@
 <?php if (is_singular('post')) : ?>
 
-	<div class="adjacent-entry-pagination pagination">
-		<?php previous_post_link('<div class="pagination-previous alignleft">%link</div>', '&larr; %title'); ?>
-		<?php next_post_link('<div class="pagination-next alignright">%link</div>', '%title &rarr;'); ?>
-	</div>
-
 	<section class="author-box" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 		<div class="author-box-avatar">
 			<?php echo get_avatar(get_the_author_meta('user_email'), 90, '', '', ['class' => 'alignleft']); ?>
@@ -18,6 +13,11 @@
 			<p><?php the_author_meta('description'); ?></p>
 		</div>
 	</section>
+
+	<div class="adjacent-entry-pagination pagination">
+		<?php previous_post_link('<div class="pagination-previous alignleft">%link</div>', '&larr; %title'); ?>
+		<?php next_post_link('<div class="pagination-next alignright">%link</div>', '%title &rarr;'); ?>
+	</div>
 
 	<?php comments_template(); ?>
 
