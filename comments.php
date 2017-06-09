@@ -15,7 +15,7 @@
 			<span class="num-comments">
 				<?php comments_popup_link('Leave a comment', '1 Comment', '% Comments'); ?>
 			</span>
-			<a href="#commentform" class="leave-comment" rel="nofollow"><?php _e('Leave a Reply', 'zero-blank'); ?></a>
+			<a href="#respond" class="leave-comment" rel="nofollow"><?php _e('Leave a Reply', 'zero-blank'); ?></a>
 		</div>
 		
 		<div class="navigation">
