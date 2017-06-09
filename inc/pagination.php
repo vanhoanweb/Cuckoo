@@ -7,7 +7,7 @@
 
 	<section class="author-box" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 		<div class="author-box-avatar">
-			<?php echo get_avatar(get_the_author_meta('user_email'), 90); ?>
+			<?php echo get_avatar(get_the_author_meta('user_email'), 90, '', '', ['class' => 'alignleft']); ?>
 		</div>		
 		<h4 class="author-box-title">
 			<?php _e('About ', 'zero-blank'); ?>
