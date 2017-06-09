@@ -13,7 +13,7 @@
 
 		<div class="comments-intro">
 			<span class="num-comments">
-				<?php comments_popup_link('Leave a comment', '1 Comment', '% Comments'); ?>
+				<?php comments_number('Leave a comment', '1 Comment', '% Comments'); ?>
 			</span>
 			<a href="#respond" class="leave-comment" rel="nofollow"><?php _e('Leave a Reply', 'zero-blank'); ?></a>
 		</div>
