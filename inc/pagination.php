@@ -9,11 +9,11 @@
 		<div class="author-box-avatar">
 			<?php echo get_avatar(get_the_author_meta('user_email'), 90, '', '', ['class' => 'alignleft']); ?>
 		</div>		
-		<h4 class="author-box-title">
+		<h3 class="author-box-title">
 			<?php _e('About ', 'zero-blank'); ?>
 			<a class="author-box-link" href="<?php echo esc_url(get_author_posts_url(get_the_author_meta('ID'))); ?>" rel="author">
 				<span itemprop="name"><?php echo get_the_author(); ?></span></a>
-		</h4>
+		</h3>
 		<div class="author-box-content" itemprop="description">
 			<p><?php the_author_meta('description'); ?></p>
 		</div>
