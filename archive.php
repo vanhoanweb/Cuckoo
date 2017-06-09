@@ -34,7 +34,7 @@
 		<?php } elseif (is_author()) { ?>
 			<section class="author-box">
 				<div class="author-box-avatar">
-					<?php echo get_avatar(get_the_author_meta('user_email') , 90); ?>
+					<?php echo get_avatar(get_the_author_meta('user_email'), 90, '', '', ['class' => 'alignleft']); ?>
 				</div>
 				<h1 class="author-box-title">
 					<?php _e('About ', 'zero-blank'); ?><?php the_post(); echo get_the_author(); rewind_posts(); ?>
