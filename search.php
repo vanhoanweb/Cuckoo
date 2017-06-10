@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="content-main">
+<main class="site-main" role="main">
 
 	<div class="archive-description">
 		<h1 class="archive-title"><?php _e('Search Results for: ', 'zero-blank'); ?><?php the_search_query(); ?></h1>
