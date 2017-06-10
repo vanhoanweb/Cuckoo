@@ -30,9 +30,9 @@
 			</div>
 		</div>
 
-		<footer class="site-footer" itemscope="" itemtype="http://schema.org/WPFooter">
+		<footer class="site-footer" role="contentinfo" itemscope="" itemtype="http://schema.org/WPFooter">
 			<div class="wrap">
-				<p>&copy; <?php echo date('Y') .' '. get_bloginfo('name'); ?>
+				<p class="site-info">&copy; <?php echo date('Y') ?> <a href="<?php echo home_url('/'); ?>" rel="home"><?php bloginfo('name'); ?></a>
 				&bull; <a href="<?php bloginfo('rss2_url'); ?>"><?php _e('Entries (RSS)', 'zero-blank'); ?></a>
 				&bull; <a href="<?php bloginfo('comments_rss2_url'); ?>"><?php _e('Comments (RSS)', 'zero-blank'); ?></a></p>
 			</div>			
