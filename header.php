@@ -23,13 +23,16 @@
 		<header id="top" class="site-header" itemscope="" itemtype="http://schema.org/WPHeader">
 			<div class="wrap">
 				<div class="title-area">
-					<?php if (is_front_page() || is_home()) : ?>
-						<h1 class="site-title"><a href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a></h1>
+					<?php if (is_front_page() || is_home()): ?>
+						<h1 class="site-title"><a href="<?php echo home_url('/'); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
 					<?php else: ?>
-						<p class="site-title"><a href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a></p>
-					<?php endif; ?>
+						<p class="site-title"><a href="<?php echo home_url('/'); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
+					<?php endif;
 
-					<p class="site-description"><?php bloginfo('description'); ?></p>
+					$description = get_bloginfo('description', 'display');
+					if ($description || is_customize_preview()): ?>
+						<p class="site-description"><?php echo $description; ?></p>
+					<?php endif; ?>
 				</div>
 			</div>
 		</header>
