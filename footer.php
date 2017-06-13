@@ -1,7 +1,6 @@
 			</div>
 		</div><!-- /.site-inner -->
 
-		<?php //if (!is_page_template('page-landing.php')) : ?>
 		<div class="footer-widgets">
 			<div class="wrap">
 				<div class="footer-widgets-1 widget-area">
@@ -39,7 +38,6 @@
 		</footer>
 
 		<a class="scroll-top" href="#top"></a>
-		<?php //endif; ?>
 		
 	</div><!-- /.site-container -->
 	
