@@ -159,10 +159,10 @@ add_filter('excerpt_more', 'zb_excerpt_more');
 
 // Add body_class tag
 function zb_body_class($classes) {
-	if (is_page_template('page-landing.php')) {
-		$classes[] = 'full-width-content zb-landing';
+	if () {
+		$classes[] = '';
 	} else {
-		$classes[] = 'content-sidebar';
+		$classes[] = '';
 	}
 	return $classes;
 }
@@ -172,4 +172,5 @@ add_filter('body_class', 'zb_body_class');
 require_once get_template_directory() .'/inc/zb-post-type.php';
 require_once get_template_directory() .'/inc/zb-sidebar.php';
 require_once get_template_directory() .'/inc/zb-metabox.php';
+require_once get_template_directory() .'/inc/zb-shortcode.php';
 require_once get_template_directory() .'/inc/zb-options.php';
