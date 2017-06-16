@@ -31,16 +31,8 @@
 				<h1 class="archive-title"><?php _e('Archives for ', 'zero-blank'); ?><?php the_time('Y'); ?></h1>
 			</div>
 		
-		<?php } elseif (is_author()) { ?>
-			<section class="author-box">
-				<div class="author-box-avatar">
-					<?php echo get_avatar(get_the_author_meta('user_email'), 90, '', '', ['class' => 'alignleft']); ?>
-				</div>
-				<h1 class="author-box-title">
-					<?php _e('About ', 'zero-blank'); ?><?php the_post(); echo get_the_author(); rewind_posts(); ?>
-				</h1>
-				<div class="author-box-content"><p><?php the_author_meta('description'); ?></p></div>
-			</section>
+		<?php } elseif (is_author()) {
+			zb_author_box(); ?>
 		
 		<?php } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
 		
