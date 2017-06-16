@@ -2,6 +2,8 @@
 	
 <main class="site-main" role="main">
 
+	<div class="site-breadcrumb"><?php zb_breadcrumbs(); ?></div>
+
 	<?php if (have_posts()) : ?>
 	
 		<?php get_template_part('inc/content'); ?>
