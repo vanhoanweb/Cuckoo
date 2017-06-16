@@ -49,4 +49,3 @@
 
 		<div class="site-inner">
 			<div class="content-sidebar-wrap">
-				<div class="site-breadcrumbs"><?php zb_breadcrumbs(); ?></div>
