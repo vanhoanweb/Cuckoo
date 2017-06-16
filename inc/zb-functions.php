@@ -25,6 +25,28 @@ function zb_track_posts($post_id) {
 add_action('wp_head', 'zb_track_posts');
 
 /*
+ * Author box
+ */
+function zb_author_box() {
+	echo '<section class="author-box" itemprop="author" itemscope="" itemtype="http://schema.org/Person">';
+	echo '<div class="author-box-avatar">';
+	echo get_avatar(get_the_author_meta('user_email'), 90, '', '', ['class' => 'alignleft']);
+	echo '</div>';
+	echo '<h3 class="author-box-title">';
+		_e('About ', 'zero-blank');
+		if (is_author()) {
+			echo get_the_author();
+		} else {
+			echo '<a class="author-box-link" href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'))) .'" rel="author"><span itemprop="name">'. get_the_author() .'</span></a>';
+		}
+	echo '</h3>';
+	echo '<div class="author-box-content" itemprop="description">';
+	echo '<p>'. get_the_author_meta('description') .'</p>';
+	echo '</div>';
+	echo '</section>';
+}
+
+/*
  * Pagination for paged posts, Page 1, Page 2, Page 3
  * with Next and Previous Links, No plugin
  */
