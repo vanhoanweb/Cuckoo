@@ -38,7 +38,7 @@
 
 		<nav class="nav-primary" itemscope="" itemtype="http://schema.org/SiteNavigationElement" aria-label="Main navigation">
 			<div class="wrap">
-				<?php if (has_nav_menu('primary-navigation')) :
+				<?php if (has_nav_menu('primary-navigation')):
 				wp_nav_menu(array(
 					'menu_class'	=>	'menu zb-nav-menu',
 					'container'		=>	'',
@@ -49,3 +49,4 @@
 
 		<div class="site-inner">
 			<div class="content-sidebar-wrap">
+				<div class="site-breadcrumbs"><?php zb_breadcrumbs(); ?></div>
