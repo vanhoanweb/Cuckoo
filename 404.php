@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="site-main" role="main">
+<main class="content" role="main">
 
 	<article <?php post_class('entry'); ?>>
 		
