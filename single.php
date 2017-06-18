@@ -2,7 +2,7 @@
 	
 <main class="site-main" role="main">
 
-	<div class="breadcrumb"><?php zb_breadcrumb(); ?></div>
+	<div class="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList"><?php zb_breadcrumb(); ?></div>
 
 	<?php if (have_posts()) : ?>
 	
