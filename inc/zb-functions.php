@@ -118,7 +118,7 @@ function zb_comments($comment, $args, $depth) {
 /*
  * Breadcrumbs
  */
-function zb_breadcrumbs() {
+function zb_breadcrumb() {
 	// Settings
 	$separator 			= '&gt;';
 	$breadcrums_id		= 'breadcrumbs';
