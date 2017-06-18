@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 	
-<main class="site-main" role="main">
+<main class="content" role="main">
 
 	<div class="breadcrumb" itemscope="" itemtype="https://schema.org/BreadcrumbList"><?php zb_breadcrumb(); ?></div>
 
