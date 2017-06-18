@@ -110,7 +110,12 @@ function zb_comments($comment, $args, $depth) {
 		</div>
 
 		<div class="comment-reply">
-			<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+			<?php $addclass = 'btn';
+			echo preg_replace('/comment-reply-link/', 'comment-reply-link ' . $addclass,
+			get_comment_reply_link(array_merge($args, array(
+				'add_below'	=> $add_below,
+				'depth'		=> $depth,
+				'max_depth'	=> $args['max_depth']))), 1); ?>
 		</div>
 	<?php if ('div' != $args['style']) echo '</article>';
 }
