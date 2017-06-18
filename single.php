@@ -2,7 +2,7 @@
 	
 <main class="site-main" role="main">
 
-	<div class="site-breadcrumb"><?php zb_breadcrumbs(); ?></div>
+	<div class="breadcrumb"><?php zb_breadcrumb(); ?></div>
 
 	<?php if (have_posts()) : ?>
 	
