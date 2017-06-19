@@ -42,7 +42,8 @@
 				wp_nav_menu(array(
 					'menu_class'	=>	'menu zb-nav-menu',
 					'container'		=>	'',
-					'theme_location'=>	'primary-navigation'
+					'theme_location'=>	'primary-navigation',
+					'items_wrap' 	=>	'<ul id="%1$s" class="%2$s"><li class="menu-item home"><a href="'. home_url('/') .'">Home</a></li>%3$s</ul>'
 				)); endif; ?>
 			</div>
 		</nav>
