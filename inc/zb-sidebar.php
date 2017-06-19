@@ -89,7 +89,7 @@ class ZBWidget extends WP_Widget {
 				</a><?php endif; endif; ?>
 
 				<header class="entry-header">
-					<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+					<h5 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 
 					<p class="entry-meta">
 						<?php if ( $show_date ) : ?>
