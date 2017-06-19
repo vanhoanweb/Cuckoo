@@ -78,10 +78,10 @@ class ZBWidget extends WP_Widget {
 			'ignore_sticky_posts' => true
 		) ) );
 
-		if ($latest_posts->have_posts()) : ?>
+		if ($latest_posts->have_posts()): ?>
 		<?php echo $args['before_widget']; ?>
-		<?php if ( $title ) { echo $args['before_title'] . $title . $args['after_title']; } ?>
-		<?php while ( $latest_posts->have_posts() ) : $latest_posts->the_post(); ?>
+		<?php if ($title) { echo $args['before_title'] . $title . $args['after_title']; } ?>
+		<?php while ($latest_posts->have_posts()) : $latest_posts->the_post(); ?>
 			<article <?php post_class('entry'); ?>>
 				<?php if ($show_thumbnail) : if (has_post_thumbnail()) : ?>
 				<a class="featured-image" href="<?php the_permalink(); ?>">
@@ -91,19 +91,21 @@ class ZBWidget extends WP_Widget {
 				<header class="entry-header">
 					<h5 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
 
+					<?php if ($show_date || $show_author): ?>
 					<p class="entry-meta">
-						<?php if ( $show_date ) : ?>
+						<?php if ($show_date): ?>
 						<span class="entry-time">
 							<time itemprop="datePublished" datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('F jS, Y'); ?></time>
 						</span>
 						<?php endif; ?>
 
-						<?php if ( $show_author ) : ?>
+						<?php if ($show_author): ?>
 						<span class="entry-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
 							<em><?php _e('by ', 'zero-blank'); ?></em><?php the_author_posts_link(); ?>
 						</span>
 						<?php endif; ?>
 					</p>
+					<?php endif; ?>
 				</header>
 			</article>
 		<?php endwhile; ?>
