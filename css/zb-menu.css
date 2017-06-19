@@ -36,7 +36,7 @@
 	border: 1px solid #eee;
 	border-top: none;
 	font-size: 14px;
-	padding: 16px 20px;
+	padding: 15px 20px;
 	position: relative;
 	width: 200px;
 }
@@ -77,7 +77,7 @@
 	.zb-nav-menu.responsive-menu li a:hover {
 		background: none;
 		line-height: 1;
-		padding: 18px 20px;
+		padding: 15px 20px;
 	}	
 	.site-header .zb-nav-menu.responsive-menu .current-menu-item > a,
 	.site-header .zb-nav-menu.responsive-menu .sub-menu a:hover,
@@ -116,7 +116,7 @@
 	.zb-nav-menu.responsive-menu .sub-menu li a:hover {
 		background: none;
 		border: none;
-		padding: 16px 20px;
+		padding: 15px 20px;
 		position: relative;
 		width: 100%;
 	}
