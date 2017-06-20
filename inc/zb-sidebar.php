@@ -84,7 +84,7 @@ class ZBWidget extends WP_Widget {
 		<?php while ($latest_posts->have_posts()) : $latest_posts->the_post(); ?>
 			<article <?php post_class('entry'); ?>>
 				<?php if ($show_thumbnail) : if (has_post_thumbnail()) : ?>
-				<a class="featured-image" href="<?php the_permalink(); ?>">
+				<a class="entry-image-link" href="<?php the_permalink(); ?>">
 					<?php the_post_thumbnail(array(100,100), array('class' => 'entry-image')); ?>
 				</a><?php endif; endif; ?>
 
