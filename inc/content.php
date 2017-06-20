@@ -16,11 +16,14 @@
 
 			<?php if (get_post_type() == 'post'): ?>
 			<p class="entry-meta">
+				<span class="entry-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+					<em><?php _e('By ', 'zero-blank'); ?></em><?php the_author_posts_link(); ?>
+				</span>
+				<span class="entry-categories">
+					<?php _e('In: ', 'zero-blank'); ?><?php the_category(', '); ?>
+				</span>
 				<span class="entry-time">
 					<em><?php _e('Posted on ', 'zero-blank'); ?></em><time itemprop="datePublished" datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('F jS, Y'); ?></time>
-				</span>
-				<span class="entry-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-					<em><?php _e('Written by ', 'zero-blank'); ?></em><?php the_author_posts_link(); ?>
 				</span>
 				<?php if (comments_open(get_the_ID())): ?>
 					<span class="entry-comments-link"><?php comments_popup_link('Leave a comment', '1 comment', '% comments', '', 'Comments disabled'); ?></span>
