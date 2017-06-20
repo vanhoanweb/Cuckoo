@@ -93,15 +93,15 @@ class ZBWidget extends WP_Widget {
 
 					<?php if ($show_date || $show_author): ?>
 					<p class="entry-meta">
-						<?php if ($show_date): ?>
-						<span class="entry-time">
-							<time itemprop="datePublished" datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('F jS, Y'); ?></time>
+						<?php if ($show_author): ?>
+						<span class="entry-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+							<?php the_author_posts_link(); ?>
 						</span>
 						<?php endif; ?>
 
-						<?php if ($show_author): ?>
-						<span class="entry-author" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-							<em><?php _e('by ', 'zero-blank'); ?></em><?php the_author_posts_link(); ?>
+						<?php if ($show_date): ?>
+						<span class="entry-time">
+							<time itemprop="datePublished" datetime="<?php the_time('Y-m-d'); ?>" pubdate><?php the_time('F jS, Y'); ?></time>
 						</span>
 						<?php endif; ?>
 					</p>
