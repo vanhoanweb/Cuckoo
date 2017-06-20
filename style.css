@@ -188,6 +188,8 @@ img.alignright,
 	margin: 0 auto;
 }
 
+/* -------------- Only Firefox -------------- */
+@-moz-document url-prefix() {}
 /* --------------- Only Safari -------------- */
 @media only screen and (-webkit-min-device-pixel-ratio: 1) {
 	/*::i-block-chrome, .yourstyle {
