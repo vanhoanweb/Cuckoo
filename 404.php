@@ -14,13 +14,13 @@
 
 			<h2>Sitemap</h2>
 
-			<h4><?php _e('Pages:', 'zero-blank'); ?></h4>
+			<h4><?php _e('Pages', 'zero-blank'); ?></h4>
 			<ul><?php wp_list_pages('depth=&title_li='); ?></ul>
 
-			<h4><?php _e('Categories:', 'zero-blank'); ?></h4>
+			<h4><?php _e('Categories', 'zero-blank'); ?></h4>
 			<ul><?php wp_list_categories('orderby=name&order=ASC&show_count=0&title_li=&depth=0'); ?></ul>
 
-			<h4><?php _e('Authors:', 'zero-blank'); ?></h4>
+			<h4><?php _e('Authors', 'zero-blank'); ?></h4>
 			<ul><?php wp_list_authors(array(
 				'show_fullname'	=> 1,
 				'optioncount'	=> 1,
@@ -32,20 +32,10 @@
 				'exclude_admin'	=> 0
 			)); ?></ul>
 
-			<h4><?php _e('Monthly:', 'zero-blank'); ?></h4>
+			<h4><?php _e('Monthly', 'zero-blank'); ?></h4>
 			<ul><?php wp_get_archives(array('type' => 'monthly')); ?></ul>
 
-			<h4><?php _e('Recent Posts:', 'zero-blank'); ?></h4>
-			<?php $args = array('posts_per_page' => 10);
-			$recent_posts = new WP_Query($args);
-			if($recent_posts->have_posts()):
-				echo '<ul>';
-				while ($recent_posts->have_posts()) : $recent_posts->the_post();
-					echo '<li><a href="'.get_the_permalink().'">'.get_the_title().'</a></li>';
-				endwhile;
-				echo '</ul>';
-			endif;
-			wp_reset_postdata(); ?>
+			<?php the_widget('WP_Widget_Recent_Posts', 'number=15', 'before_widget=&after_widget=&before_title=<h4>&after_title=</h4>'); ?>
 
 		</div>
 		
