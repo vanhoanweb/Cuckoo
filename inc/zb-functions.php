@@ -25,25 +25,57 @@ function zb_track_posts($post_id) {
 add_action('wp_head', 'zb_track_posts');
 
 /*
+ * Social Share
+ */
+function zb_social_share() {
+	echo '<div class="social-share">
+		 <a rel="nofollow" target="_blank" class="facebook" href="https://www.facebook.com/sharer/sharer.php?u='. get_the_permalink() .'&t='. get_the_title() .'"><span class="dashicons dashicons-facebook-alt"></span></a>
+		 <a rel="nofollow" target="_blank" class="twitter" href="https://twitter.com/share?url='. get_the_permalink() .'&text='. get_the_title() .'"><span class="dashicons dashicons-twitter"></span></a>
+		 <a rel="nofollow" target="_blank" class="googleplus" href="https://plus.google.com/share?url='. get_the_permalink() .'"><span class="dashicons dashicons-googleplus"></span></a>
+		 <a rel="nofollow" target="_blank" class="email" href=""><span class="dashicons dashicons-email-alt"></span></a>
+		 </div>';
+}
+
+/*
+ * Related Posts
+ */
+function zb_related_posts() {
+	$category_id = get_the_category();
+	$related_posts = new WP_Query(array('posts_per_page' => 3, 'category__in' => $category_id[0]->term_id));
+	if ($related_posts->have_posts()): ?>
+	<section class="related-posts">
+		<h3>Related Posts</h3>
+	<?php while ($related_posts->have_posts()) : $related_posts->the_post(); ?>
+		<article <?php post_class('entry'); ?>>
+			<?php if (has_post_thumbnail()) : ?>
+			<a class="entry-image-link" href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail(array(225,120), array('class' => 'entry-image')); ?>
+			</a><?php endif; ?>
+
+			<header class="entry-header">
+				<h4 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+			</header>
+		</article>
+	<?php endwhile; wp_reset_postdata(); ?>
+	</section>
+	<?php endif;
+}
+
+/*
  * Author box
  */
 function zb_author_box() {
-	echo '<section class="author-box" itemprop="author" itemscope="" itemtype="http://schema.org/Person">';
-	echo '<div class="author-box-avatar">';
-	echo get_avatar(get_the_author_meta('user_email'), 90, '', '', ['class' => 'alignleft']);
-	echo '</div>';
-	echo '<h3 class="author-box-title">';
-		_e('About ', 'zero-blank');
-		if (is_author()) {
-			echo get_the_author();
-		} else {
-			echo '<a class="author-box-link" href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'))) .'" rel="author"><span itemprop="name">'. get_the_author() .'</span></a>';
-		}
-	echo '</h3>';
-	echo '<div class="author-box-content" itemprop="description">';
-	echo '<p>'. get_the_author_meta('description') .'</p>';
-	echo '</div>';
-	echo '</section>';
+	echo '<section class="author-box" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+		  <div class="author-box-avatar">' .
+		  get_avatar(get_the_author_meta('user_email'), 90, '', '', ['class' => 'alignleft']) .
+		 '</div>
+		  <h3 class="author-box-title">' . __('About ', 'zero-blank');
+	echo (is_author()) ? get_the_author() : '<a class="author-box-link" href="'. esc_url(get_author_posts_url(get_the_author_meta('ID'))) .'" rel="author"><span itemprop="name">'. get_the_author() .'</span></a>';
+	echo '</h3>
+		  <div class="author-box-content" itemprop="description">
+		  <p>'. get_the_author_meta('description') .'</p>
+		  </div>
+		  </section>';
 }
 
 /*
