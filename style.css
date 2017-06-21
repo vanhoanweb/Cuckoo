@@ -95,6 +95,26 @@ a, button, input:focus, input[type="button"], input[type="reset"], input[type="s
 }
 ::-moz-selection { background-color: #222; color: #fff; }
 ::selection { background-color: #222; color: #fff; }
+.facebook {
+	background-color: #3a589e;
+	border: 1px solid #2e4675;
+}
+.twitter {
+	background-color: #429cd6;
+	border: 1px solid #3c87b2;
+}
+.googleplus {
+	background-color: #df4b37;
+	border: 1px solid #c44133;
+}
+.whatsapp {
+	background-color: #71c169;
+	border: 1px solid #28b04b;
+}
+.email {
+	background-color: #323b43;
+	border: 1px solid #000;
+}
 .entry-comments-link::before, .entry-edit::before {
 	content: "\2014";
 	margin: 0 6px 0 2px;
