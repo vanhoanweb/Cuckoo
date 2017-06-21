@@ -122,7 +122,7 @@ function zb_comments($comment, $args, $depth) {
 		<header class="comment-header">
 			<p class="comment-author" itemprop="author" itemscope="" itemtype="https://schema.org/Person">
 				<?php if ($args['avatar_size'] != 0) echo get_avatar($comment, 70, '', '', ['class' => 'alignleft']); ?>
-				<?php printf(__('<span itemprop="name">%s</span> <span class="says">says</span>'), get_comment_author_link()) ?>
+				<?php printf(__('<span class="name" itemprop="name">%s</span> <span class="says">says</span>'), get_comment_author_link()) ?>
 			</p>
 
 			<p class="comment-meta">
