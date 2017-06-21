@@ -35,7 +35,7 @@
 
 		<div class="entry-content" itemprop="text">
 			<?php if (is_singular()): ?>
-				<?php the_content(); ?>
+				<?php the_content(); zb_social_share(); ?>
 			<?php else : ?>
 				<?php the_excerpt(); ?>
 			<?php endif; ?>
