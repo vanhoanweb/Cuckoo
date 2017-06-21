@@ -1,6 +1,6 @@
 <?php if (is_singular('post')) :
 
-	zb_author_box(); ?>
+	zb_related_posts(); zb_author_box(); ?>
 
 	<div class="adjacent-entry-pagination pagination">
 		<?php previous_post_link('<div class="pagination-previous alignleft">%link</div>', '&larr; %title'); ?>
