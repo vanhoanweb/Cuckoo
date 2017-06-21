@@ -51,12 +51,12 @@ function zb_scripts_and_styles() {
 add_action('wp_enqueue_scripts', 'zb_scripts_and_styles');
 
 // Custom the_excerpt or the_content
-function zb_excerpt( $limit ) {
-	return wp_trim_words( wp_strip_all_tags( get_the_excerpt() ), $limit, '...' );
+function zb_excerpt($limit) {
+	return wp_trim_words(wp_strip_all_tags(get_the_excerpt()), $limit, '...');
 }
 
 // By default, excerpt length is set to 55 words. To change excerpt length to 30 words
-function zb_excerpt_length( $length ) {
+function zb_excerpt_length($length) {
 	return (is_front_page() || is_home()) ? 55 : 30;
 }
 add_filter('excerpt_length', 'zb_excerpt_length', 999);
@@ -67,6 +67,18 @@ function zb_excerpt_more($more) {
 	return '... <a class="more-link" href="' . get_permalink($post->ID) . '">' . __( '[Continue reading]', 'zero-blank' ) . '</a>';
 }
 add_filter('excerpt_more', 'zb_excerpt_more');
+
+// Add target blank to links from comment message
+function zb_filter_comment_content($comment_content){
+	return str_replace('<a ', '<a rel="external nofollow" target="_blank" ', $comment_content);
+}
+add_filter('comment_text', 'zb_filter_comment_content');
+
+// Add target blank to author name in comments
+function zb_comment_author_link($author_link){
+	return str_replace('<a ', '<a class="comment-author-link" rel="external nofollow" itemprop="url" target="_blank" ', $author_link);
+}
+add_filter('get_comment_author_link', 'zb_comment_author_link');
 
 // Add body_class tag
 /*function zb_body_class($classes) {
