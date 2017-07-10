@@ -1,10 +1,10 @@
-# [Zero Blank](http://vanhoan.com)
+# [Cuckoo](http://vanhoan.com)
 
 Powerful shell for rapidly deploying your WordPress projects.
 
-* Project: [github.com/vanhoanweb/zero-blank](https://github.com/vanhoanweb/zero-blank)
+* Project: [github.com/vanhoanweb/cuckoo](https://github.com/vanhoanweb/cuckoo)
 * Author : [Van Hoan](http://vanhoan.com) // [@vanhoanweb](http://twitter.com/vanhoanweb)
 
 ## Description
 
-Zero Blank is a starter theme.
+Cuckoo is a starter theme.
